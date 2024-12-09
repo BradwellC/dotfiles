@@ -1,0 +1,8 @@
+[init]
+ defaultBranch = main
+[user]
+	name = Jormungandr
+	email = chris-bradwell@live.co.uk
+[core]
+	editor = code --wait
+	excludesfile = /Users/chrisbradwell/.gitignore_global
