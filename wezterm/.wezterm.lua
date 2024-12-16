@@ -9,7 +9,7 @@ local config = wezterm.config_builder()
 config.color_scheme = 'catppuccin-mocha'
 
 config.font = wezterm.font "JetBrainsMono NFM"
-config.font_size = 14
+config.font_size = 15
 
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = true
@@ -21,7 +21,7 @@ config.window_decorations = "RESIZE"
 config.window_padding = {
   left = 5,
   right = 5,
-  top = 5,
+  top = 15,
   bottom = 0,
 }
 
