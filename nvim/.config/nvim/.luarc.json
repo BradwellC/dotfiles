@@ -1,7 +1,14 @@
 {
     "diagnostics.globals": [
         "vim",
-        "capabilities"
+        "capabilities",
+        "M",
+        "Snacks",
+        "fun",
+        "job",
+        "exit_code",
+        "name",
+        "t"
     ],
     "diagnostics.disable": [
         "undefined-doc-name"
