@@ -90,3 +90,6 @@ fi
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
+
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"

@@ -1,6 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
+	event = { "BufReadPre", "BufNewFile" },
+  build = ":TSUpdate",
 	config = function()
 		local config = require("nvim-treesitter.configs")
 
@@ -11,6 +12,7 @@ return {
         "typescript",
         "tsx",
         "css",
+        "gitignore",
       },
 			auto_install = true,
 			highlight = { enable = true },

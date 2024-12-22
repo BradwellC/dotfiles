@@ -41,7 +41,9 @@ return {
 					"tailwindcss",
 					"rubocop",
           "jsonls",
-          "taplo"
+          "taplo",
+          "rust_analyzer",
+          "graphql",
 				},
 			})
 		end,
@@ -50,7 +52,7 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
-			local servers = { "lua_ls", "taplo", "ts_ls", "eslint", "tailwindcss", "cssls", "jsonls", "eslint_d" }
+			local servers = { "graphql", "rust_analyzer", "lua_ls", "taplo", "ts_ls", "eslint", "tailwindcss", "cssls", "jsonls", "eslint_d" }
 			local capabilities = capabilities
 
 			for _, lsp in ipairs(servers) do

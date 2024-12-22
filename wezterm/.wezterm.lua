@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 
 config.color_scheme = 'catppuccin-macchiato'
 
-config.font = wezterm.font "JetBrainsMono NFM"
+config.font = wezterm.font "FiraCode Nerd Font"
 config.font_size = 15
 
 config.enable_tab_bar = true
