@@ -40,20 +40,32 @@ return {
 					"cssls",
 					"tailwindcss",
 					"rubocop",
-          "jsonls",
-          "taplo",
-          "rust_analyzer",
-          "graphql",
+					"jsonls",
+					"taplo",
+					"rust_analyzer",
+					"graphql",
 				},
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "saghen/blink.cmp" },
 		config = function()
 			local lspconfig = require("lspconfig")
-			local servers = { "graphql", "rust_analyzer", "lua_ls", "taplo", "ts_ls", "eslint", "tailwindcss", "cssls", "jsonls", "eslint_d" }
-			local capabilities = capabilities
+			local servers = {
+				"graphql",
+				"rust_analyzer",
+				"lua_ls",
+				"taplo",
+				"ts_ls",
+				"eslint",
+				"tailwindcss",
+				"cssls",
+				"jsonls",
+				"eslint_d",
+			}
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			for _, lsp in ipairs(servers) do
 				lspconfig[lsp].setup({

@@ -6,9 +6,9 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
-config.color_scheme = 'catppuccin-macchiato'
+config.color_scheme = "catppuccin-macchiato"
 
-config.font = wezterm.font "FiraCode Nerd Font"
+config.font = wezterm.font("FiraCode Nerd Font")
 config.font_size = 15
 
 config.enable_tab_bar = true
@@ -19,13 +19,13 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 
 config.window_padding = {
-  left = 10,
-  right = 10,
-  top = 15,
-  bottom = 0,
+	left = 10,
+	right = 10,
+	top = 5,
+	bottom = 0,
 }
 
-config.default_cursor_style = 'SteadyBar'
+config.default_cursor_style = "SteadyBar"
 
 -- and finally, return the configuration to wezterm
 return config
