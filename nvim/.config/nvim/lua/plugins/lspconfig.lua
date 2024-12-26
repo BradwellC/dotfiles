@@ -29,9 +29,10 @@ return {
 			})
 		end,
 	},
-	{
+  {
 		"williamboman/mason-lspconfig.nvim",
-		config = function()
+    config = function()
+
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
@@ -46,11 +47,10 @@ return {
 					"graphql",
 				},
 			})
-		end,
-	},
+    end
+  },
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "saghen/blink.cmp" },
 		config = function()
 			local lspconfig = require("lspconfig")
 			local servers = {
@@ -65,7 +65,8 @@ return {
 				"jsonls",
 				"eslint_d",
 			}
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			for _, lsp in ipairs(servers) do
 				lspconfig[lsp].setup({
