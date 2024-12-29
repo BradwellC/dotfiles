@@ -29,10 +29,9 @@ return {
 			})
 		end,
 	},
-  {
+	{
 		"williamboman/mason-lspconfig.nvim",
-    config = function()
-
+		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
@@ -45,10 +44,11 @@ return {
 					"taplo",
 					"rust_analyzer",
 					"graphql",
+					"bashls",
 				},
 			})
-    end
-  },
+		end,
+	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -64,6 +64,7 @@ return {
 				"cssls",
 				"jsonls",
 				"eslint_d",
+				"bashls",
 			}
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
