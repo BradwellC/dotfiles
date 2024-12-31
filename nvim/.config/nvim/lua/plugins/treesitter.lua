@@ -1,22 +1,39 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	event = { "BufReadPre", "BufNewFile" },
-  build = ":TSUpdate",
+	dependencies = {
+		-- ts-autotag utilizes treesitter to understand the code stucture to close tsx tags
+		"windwp/nvim-ts-autotag",
+	},
+	-- when the plugin build runs the TSUpdate command to ensure all our servers are installed and updated
+	build = ":TSUpdate",
 	config = function()
-		local config = require("nvim-treesitter.configs")
+		-- gain access to the treesitter config functions
+		local ts_config = require("nvim-treesitter.configs")
 
-		config.setup({
-      ensure_installed = {
-        "lua",
-        "javascript",
-        "typescript",
-        "tsx",
-        "css",
-        "gitignore",
-      },
+		-- call the treesitter setup with properties to config our experience
+		ts_config.setup({
+			-- make sure we have the following installed: vim, vimdoc, lua, java, javascript, typescript, html, css, json, tsx, markdown, markdown inline, gitignore
+			ensure_installed = {
+				"vim",
+				"vimdoc",
+				"lua",
+				"java",
+				"javascript",
+				"typescript",
+				"html",
+				"css",
+				"json",
+				"tsx",
+				"markdown",
+				"markdown_inline",
+				"gitignore",
+			},
+			-- when using a new file type is will be added to treesitter automatically
 			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
+			-- make sure highlighting is enabled
+			highlight = { enabled = true },
+			-- enable tsx auto closing tag creation
+			autotag = { enable = true },
 		})
 	end,
 }

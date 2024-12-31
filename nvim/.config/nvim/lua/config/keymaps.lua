@@ -1,17 +1,24 @@
-vim.g.mapleader = " "
-vim.g.localleader = " "
-
 local keymap = vim.keymap
 
+-- Setting leader keymappping
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Exit insert mode
-keymap.set('i', '<c-q>', '<ESC>', { desc = "Exit insert mode with ctl q" })
+keymap.set("i", "<C-q>", "<Esc>", { desc = "Exit insert mode" })
 
--- Change indent numbers
-keymap.set('n', '<leader>+', '<c-a>', { desc = "Increase Indent Number" })
-keymap.set('n', '<leader>-', '<c-x>', { desc = "Decrease Indent Number" })
+-- Remove search highlight after searching
+keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search highlight" })
 
--- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+-- Easliy split windows
+keymap.set("n", "<leader>sh", "<C-w>v", { desc = "Split window vertically" })
+keymap.set("n", "<leader>sv", "<C-w>s", { desc = "Split window horizontally" })
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Split window equally" })
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+
+-- Exit Vim's terminal mode
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- Stay in indent mode
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left in visual mode" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right in visual mode" })

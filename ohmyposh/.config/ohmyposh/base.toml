@@ -42,7 +42,7 @@ foreground_templates = [
 ]
 
 [blocks.segments.properties]
-branch_icon = "\ue725"
+branch_icon = " \ue725 "
 fetch_status = true
 fetch_upstream_icon = true
 source = "cli"

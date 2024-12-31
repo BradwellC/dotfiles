@@ -1,0 +1,52 @@
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+PADDINGS=3 # All paddings use this value (icon, label, background)
+
+# Bar Appearance #
+bar=(
+  height=37
+  position=top
+  padding_left=10
+  padding_right=10
+  color=$BAR_COLOR
+  sticky=on
+  notch_width=0
+  corner_radius=10
+  y_offset=5
+  margin=10
+)
+
+sketchybar --bar "${bar[@]}"
+
+# Changing Defaults #
+default=(
+  padding_right=$PADDINGS
+  padding_left=$PADDINGS
+  icon.font="$FONT:Bold:15.0"
+  label.font="$FONT:Bold:13.0"
+  icon.color=$TEXT
+  label.color=$TEXT
+  icon.padding_left=$PADDINGS
+  icon.padding_right=$PADDINGS
+  label.padding_left=$PADDINGS
+  label.padding_right=$PADDINGS
+)
+sketchybar --default "${default[@]}"
+
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
+
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/github.sh"
+
+# Force all scripts to run the first time (never do this in a script) #
+sketchybar --update
