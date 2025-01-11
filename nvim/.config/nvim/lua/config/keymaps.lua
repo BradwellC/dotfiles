@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Exit insert mode
-keymap.set("i", "<C-q>", "<Esc>", { desc = "Exit insert mode" })
+keymap.set("i", "qw", "<ESC>", { desc = "[E]xit Insert [M]ode" })
 
 -- Remove search highlight after searching
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search highlight" })

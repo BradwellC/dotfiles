@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
+source "$HOME/.config/sketchybar/colors.sh"
 
-COUNT="$(brew outdated | wc -l | tr -d ' ')"
+COUNT=$(brew outdated | wc -l | tr -d ' ')
 
 COLOR=$RED
 
